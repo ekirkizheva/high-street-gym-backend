@@ -1,8 +1,9 @@
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Trainer } from './trainer.entity';
+import { User } from './user.entityt';
 
-@Entity({ name: 'calendar_event' })
-export class CalendarEvent {
+@Entity({ name: 'scheduled_events' })
+export class ScheduledEvents {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -10,18 +11,16 @@ export class CalendarEvent {
   name: string;
 
   @Column()
-  recurring: boolean;
-
-  @Column()
-  weekday: number;
+  date: Date;
 
   @Column()
   duration: number;
 
-  @Column()
-  level: string;
-
   @ManyToOne(() => Trainer, { cascade: true })
   @JoinColumn({name: 'trainer_id'})
   trainer: Trainer;
+
+  @ManyToOne(() => User, { cascade: true })
+  @JoinColumn({name: 'user_id'})
+  user: User;
 }
