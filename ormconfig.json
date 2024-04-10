@@ -1,23 +1,17 @@
 {
-    "type": "mysql",
-    "host": "localhost",
-    "port": 3306,
-    "username": "root",
-    "password": "Qwertyu123",
-    "database": "the_mobile_hour",
-    "synchronize": true,
-    "entities": [
-      "src/model/*.js"
-    ],
-    "subscribers": [
-      "src/subscriber/*.js"
-    ],
-    "migrations": [
-      "src/migration/*.js"
-    ],
-    "cli": {
-      "entitiesDir": "src/model",
-      "migrationsDir": "src/migration",
-      "subscribersDir": "src/subscriber"
-    }
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "Qwertyu123",
+  "database": "high_street_gym",
+  "synchronize": true,
+  "entities": ["src/model/*.js"],
+  "subscribers": ["src/subscriber/*.js"],
+  "migrations": ["src/migration/*.js"],
+  "cli": {
+    "entitiesDir": "src/model",
+    "migrationsDir": "src/migration",
+    "subscribersDir": "src/subscriber"
   }
+}

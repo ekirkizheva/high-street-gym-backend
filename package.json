@@ -10,7 +10,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start-db": "docker run --name high-street-gym -e MYSQL_ROOT_PASSWORD=Qwertyu123 -p 3306:3306 -d mysql",
-    "init-db": "docker exec -it high-street-gym mysql -pQwertyu123 -e 'create database the_mobile_hour'",
+    "init-db": "docker exec -it high-street-gym mysql -pQwertyu123 -e 'create database high_street_gym'",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
