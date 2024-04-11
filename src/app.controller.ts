@@ -71,7 +71,7 @@ export class AppController {
     return 'Success';
   }
 
-  @Post('singin')
+  @Post('signin')
   signIn(@Body() signInDto: Record<string, any>) {
      return this.appService.signIn(signInDto.username, signInDto.password);
   }
