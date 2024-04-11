@@ -34,5 +34,9 @@ export class AppService {
       access_token: await this.jwtService.signAsync(payload),
     };
   }
-
+  
+  async postUser(user: User) {
+    const user_password = await bcrypt.hash(user.user_password, 10); 
+    return await this.userRepository.insert({...user,user_password });
+  }
 }

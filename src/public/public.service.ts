@@ -4,7 +4,6 @@ import { ClassType } from 'src/model/class-type.entity';
 import { ScheduledClasses } from 'src/model/scheduled-classes.entity';
 import { Trainer } from 'src/model/trainer.entity';
 import { Repository } from 'typeorm';
-
 @Injectable()
 export class PublicService {
 
@@ -51,5 +50,4 @@ export class PublicService {
                     relations: ['class', 'trainer'],
                 });
     }
-    
 }

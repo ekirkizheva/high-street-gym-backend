@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { ClassType } from './model/class-type.entity';
 import { ScheduledClasses } from './model/scheduled-classes.entity';
 import { Trainer } from './model/trainer.entity';
+import { User } from './model/user.entityt';
 
 
 @Controller()
@@ -73,6 +74,11 @@ export class AppController {
   @Post('singin')
   signIn(@Body() signInDto: Record<string, any>) {
      return this.appService.signIn(signInDto.username, signInDto.password);
+  }
+
+  @Post('signup')
+  async postUser(@Body() userDTO: User) {
+    return await this.appService.postUser(userDTO);
   }
 
 }
