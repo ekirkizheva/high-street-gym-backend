@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Feature } from 'src/model/feature.entity';
-import { Product } from 'src/model/product.entity';
+import { Blog } from 'src/model/blog.entity';
+import { User } from 'src/model/user.entityt';
 import { AuthenticatedController } from './authenticated.controller';
 import { AuthenticatedService } from './authenticated.service';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Product, Feature])],
+  imports: [TypeOrmModule.forFeature([User, Blog])],
   controllers: [AuthenticatedController],
   providers: [AuthenticatedService]
 })

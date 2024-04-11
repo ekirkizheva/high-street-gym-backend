@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import * as bcrypt from 'bcrypt';
-import { Product } from 'src/model/product.entity';
+import { Blog } from 'src/model/blog.entity';
 import { User } from 'src/model/user.entityt';
 import { Repository } from 'typeorm';
 
@@ -9,12 +8,29 @@ import { Repository } from 'typeorm';
 export class AuthenticatedService {
 
     constructor(
-        @InjectRepository(Product)
+        @InjectRepository(User)
         private userRepository: Repository<User>,
+        @InjectRepository(Blog)
+        private blogRepository: Repository<Blog>,
     ){}
 
-    async postUser(user: User) {
-        const user_password = await bcrypt.hash(user.user_password, 10); 
-        return await this.userRepository.insert({...user,user_password });
+    getBlog() {
+        return this.blogRepository.find({
+            relations: ['user'],
+            select: {
+                id: true,
+                date: true,
+                message: true,
+                user: {
+                    firstName: true,
+                    lastName: true,
+                }
+            }
+        });
+    }
+
+    async postBlog(username: string, blog: Blog) {
+        const user = (await this.userRepository.findBy({username}))[0];
+        return this.blogRepository.insert({...blog, user});
     }
 }
