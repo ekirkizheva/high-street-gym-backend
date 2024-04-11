@@ -25,6 +25,9 @@ export class AuthenticatedService {
                     firstName: true,
                     lastName: true,
                 }
+            },
+            order: {
+                id: 'DESC'
             }
         });
     }
