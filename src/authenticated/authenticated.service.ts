@@ -46,6 +46,15 @@ export class AuthenticatedService {
         return this.blogRepository.insert({...blog, user});
     }
 
+    async getEvents(username: string) {
+        const user = (await this.userRepository.findBy({username}))[0];
+
+        return this.scheduledEventsRepository.find({
+            where: {user},
+            relations: ['trainer']
+        })
+    }
+
     async getAvailability(date: Date, time: number, username: string) {
         const dayOfWek = new Date(date).getDay() || 7;
         const trainers = await this.trainerClassesRepository.find();

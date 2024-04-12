@@ -20,6 +20,12 @@ export class AuthenticatedController {
     }
 
     @UseGuards(MemberGuard)
+    @Get('events')
+    async getEvents(@Request() req: any) {
+      return (await this.authenticatedService.getEvents(req.user.username));
+    }
+
+    @UseGuards(MemberGuard)
     @Get('availability/:date/:time')
     async getAvailability(@Request() req: any, @Param('date') date: Date, @Param('time') time: number) {
       return (await this.authenticatedService.getAvailability(date, time, req.user.username));
