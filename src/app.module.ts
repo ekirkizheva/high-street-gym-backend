@@ -7,13 +7,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthenticatedModule } from './authenticated/authenticated.module';
 import { Blog } from './model/blog.entity';
-import { ChangeLog } from './model/changelog.entity';
 import { ClassType } from './model/class-type.entity';
-import { Customer } from './model/customer.entity';
-import { Feature } from './model/feature.entity';
-import { OrderDetail } from './model/order-detail.entity';
-import { Order } from './model/order.entity';
-import { Product } from './model/product.entity';
 import { ScheduledClasses } from './model/scheduled-classes.entity';
 import { ScheduledEvents } from './model/scheduled-events.entity';
 import { Trainer } from './model/trainer.entity';
@@ -34,7 +28,7 @@ import { PublicModule } from './public/public.module';
       username: 'root',
       password: 'Qwertyu123',
       database: 'high_street_gym',
-      entities: [User, Product, Feature, ChangeLog, Customer, Order, OrderDetail, ClassType, Trainer, ScheduledClasses, ScheduledEvents, Blog],
+      entities: [User, ClassType, Trainer, ScheduledClasses, ScheduledEvents, Blog],
       synchronize: true,
     }),
     TypeOrmModule.forFeature([User, ClassType, Trainer, ScheduledClasses]),

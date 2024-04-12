@@ -16,27 +16,6 @@ export class PublicService {
         private scheduledClassesRepository: Repository<ScheduledClasses>,
     ){}
 
-    // getBrands(): Promise<{manufacturer: string}[]> {
-    //     return this.productRepository
-    //         .createQueryBuilder()
-    //         .distinct()
-    //         .select(['manufacturer'])
-    //         .execute();
-    // }
-
-    // getProduct(id: number): Promise<Product[]> {
-    //     return this.productRepository.find({
-    //         relations: ['features'],
-    //         where: { id }
-    //     });
-    // }
-
-    // getProducts(): Promise<Product[]> {
-    //     return this.productRepository.find({
-    //         relations: ['features'],
-    //     });
-    // }
-
     getClasses(): Promise<ClassType[]> {
         return this.classTypeRepository.find();
     }

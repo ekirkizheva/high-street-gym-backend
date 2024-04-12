@@ -1,6 +1,5 @@
 import { Body, Controller, Delete, Get, HttpStatus, Param, ParseFilePipeBuilder, Post, Put, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { Product } from 'src/model/product.entity';
 import { User } from 'src/model/user.entityt';
 import { AdminService } from './admin.service';
 import { AdminGuard } from './guards/admin.guard';
@@ -38,30 +37,6 @@ export class AdminController {
     @Delete('user/:id')
     async deleteUser(@Param('id') id: number) {
         return await this.adminService.deleteUser(+id);
-    }
-
-    @UseGuards(AdminGuard)
-    @Post('product') 
-    async postProduct(@Body() productDTO: Product) {
-      return await this.adminService.postProduct(productDTO);
-    }
-
-    @UseGuards(AdminGuard)
-    @Put('product/:id') 
-    async putProduct(@Body() productDTO: Product, @Param('id') id: number) {
-      return await this.adminService.putProduct(+id, productDTO);
-    }
-
-    @UseGuards(AdminGuard)
-    @Delete('product/:id')
-    async deleteProduct(@Param('id') id: number) {
-        return await this.adminService.deleteProduct(+id);
-    }
-
-    @UseGuards(AdminGuard)
-    @Get('changelog')
-    async getChangeLog() {
-        return await this.adminService.getChangeLog();
     }
 
     @UseGuards(AdminGuard)
