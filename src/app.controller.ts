@@ -36,7 +36,7 @@ export class AppController {
       { name: 'Yoga' },
       { name: 'Pilates' },
       { name: 'Abs' },
-      { name: 'HIIT or high-intensity interval training' },
+      { name: 'HIIT' },
       { name: 'Indoor cycling' },
       { name: 'Boxing' },
       { name: 'Zumba' }
@@ -80,5 +80,4 @@ export class AppController {
   async postUser(@Body() userDTO: User) {
     return await this.appService.postUser(userDTO);
   }
-
 }
