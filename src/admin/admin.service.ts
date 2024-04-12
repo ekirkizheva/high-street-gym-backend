@@ -137,7 +137,6 @@ export class AdminService {
         if (obj && obj.ScheduledClass) {
             const scheduledClass = obj.ScheduledClass;
 
-            console.log(scheduledClass);
             if (scheduledClass.weekday && 
                 scheduledClass.time && 
                 scheduledClass.duration && 
