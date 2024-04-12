@@ -70,7 +70,7 @@ export class AdminController {
     public async uploadTrainer(
         @UploadedFile(
         new ParseFilePipeBuilder()
-            .addFileTypeValidator({ fileType: 'application/xml' })
+            //.addFileTypeValidator({ fileType: 'application/xml' })
             .build({ errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY }),
         )
         file,
@@ -84,7 +84,7 @@ export class AdminController {
     public async uploadClass(
         @UploadedFile(
         new ParseFilePipeBuilder()
-            .addFileTypeValidator({ fileType: 'application/xml' })
+            // .addFileTypeValidator({ fileType: 'application/xml' })
             .build({ errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY }),
         )
         file,
