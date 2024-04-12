@@ -1,4 +1,5 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpStatus, Param, ParseFilePipeBuilder, Post, Put, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
+import { FileInterceptor } from '@nestjs/platform-express';
 import { Product } from 'src/model/product.entity';
 import { User } from 'src/model/user.entityt';
 import { AdminService } from './admin.service';
@@ -62,4 +63,33 @@ export class AdminController {
     async getChangeLog() {
         return await this.adminService.getChangeLog();
     }
+
+    @UseGuards(AdminGuard)
+    @Post('trainer')
+    @UseInterceptors(FileInterceptor('file'))
+    public async uploadTrainer(
+        @UploadedFile(
+        new ParseFilePipeBuilder()
+            .addFileTypeValidator({ fileType: 'application/xml' })
+            .build({ errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY }),
+        )
+        file,
+    ) {
+        return await this.adminService.postTrainer(file.buffer.toString());
+    }
+
+    @UseGuards(AdminGuard)
+    @Post('class')
+    @UseInterceptors(FileInterceptor('file'))
+    public async uploadClass(
+        @UploadedFile(
+        new ParseFilePipeBuilder()
+            .addFileTypeValidator({ fileType: 'application/xml' })
+            .build({ errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY }),
+        )
+        file,
+    ) {
+        return await this.adminService.postClass(file.buffer.toString());
+    }
+
 }
