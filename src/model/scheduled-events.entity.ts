@@ -8,10 +8,10 @@ export class ScheduledEvents {
   id: number;
 
   @Column()
-  name: string;
+  date: Date;
 
   @Column()
-  date: Date;
+  time: number;
 
   @Column()
   duration: number;
