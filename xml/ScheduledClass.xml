@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ScheduledClass SYSTEM "ScheduledClass.dtd">
 <ScheduledClass>
   <weekday>6</weekday>
   <time>900</time>

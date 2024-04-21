@@ -1,0 +1,2 @@
+<!ELEMENT Trainer (name)>
+<!ELEMENT name (#PCDATA)>

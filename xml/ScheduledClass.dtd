@@ -1,0 +1,7 @@
+<!ELEMENT ScheduledClass (weekday,time,duration,level,class,trainer)>
+<!ELEMENT weekday (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT duration (#PCDATA)>
+<!ELEMENT level (#PCDATA)>
+<!ELEMENT class (#PCDATA)>
+<!ELEMENT trainer (#PCDATA)>
