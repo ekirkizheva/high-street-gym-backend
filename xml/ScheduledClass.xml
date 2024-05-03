@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ScheduledClass SYSTEM "ScheduledClass.dtd">
 <ScheduledClass>
+  <!--Weekdays Mon:1 Tue:2 Wed:3 Thu:4 Fri:5 Sat:6 Sun:7-->
   <weekday>6</weekday>
+  <!--Time of day in minutest starting from midnight 000-->
   <time>900</time>
+  <!--Class Duration in minutes-->
   <duration>60</duration>
+  <!--Class Level may contain any string-->
   <level>Intermediate</level>
+  <!--Class Name may contain any string-->
   <class>Zumba</class>
+  <!--Trainer Full name must match existing trainers name exactly-->
   <trainer>Hannah Clarke</trainer>
 </ScheduledClass>

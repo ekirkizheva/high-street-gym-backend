@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Trainer SYSTEM "Trainer.dtd">
 <Trainer>
+  <!--Trainer Full name-->
   <name>Hannah Clarke</name>
 </Trainer>
